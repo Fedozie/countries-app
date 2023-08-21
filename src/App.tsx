@@ -1,11 +1,11 @@
-
-import './App.css'
+import Header from './components/header/header';
+import './App.css';
 
 const App = () => {
 
   return (
     <>
-      <h1 className='text-3xl font-bold'>Vite + React</h1>
+      <Header/>
     </>
   )
 }
