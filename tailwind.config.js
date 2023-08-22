@@ -5,6 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
     "node_modules/flowbite-react/**/*.{js,ts,jsx,tsx}"
   ],
+  darkMode: 'class',
   theme: {
     colors: {
       'dark-els': 'hsl(209, 23%, 22%)',

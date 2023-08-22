@@ -4,7 +4,7 @@ import './App.css';
 const App = () => {
 
   return (
-    <div className='font-primary'>
+    <div>
       <Header/>
     </div>
   )
