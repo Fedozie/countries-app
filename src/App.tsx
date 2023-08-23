@@ -7,8 +7,8 @@ const App = () => {
   return (
     <div className='w-100vw'>
       <Header/>
-      <section className='w-full bg-light-bg dark:bg-dark-bg'>
-        
+      <section className='w-full bg-light-bg dark:bg-dark-bg px-20 py-10'>
+        <SearchBar/>
       </section>
     </div>
   )
