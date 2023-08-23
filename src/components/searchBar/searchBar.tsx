@@ -1,8 +1,8 @@
 const SearchBar = () => {
   return (
     <form className="flex justify-between mb-10">
-      <div className="flex items-center bg-dark-text w-3/12">
-        <button className=" mx-4">
+      <div className="flex items-center bg-dark-text w-3/12 dark:bg-dark-els ">
+        <button className="mx-4 peer">
           <svg
             className="w-6 h-6 text-gray-800 dark:text-white"
             aria-hidden="true"
@@ -24,11 +24,20 @@ const SearchBar = () => {
           placeholder="Search for a country..."
           name=""
           id=""
-          className="border-0 outline-0 bg-dark-text w-full"
+          className="cursor-pointer border-0 focus:border-0 focus:outline-0 w-full dark:bg-dark-els placeholder:text-light-text dark:placeholder:text-dark-text"
         />
       </div>
 
-      <div>anii</div>
+      <div>
+        <select name="" id="" className="dark:bg-dark-els dark:text-dark-text">
+            <option value="" disabled selected>Filter by Region</option>
+            <option value="Africa">Africa</option>
+            <option value="America">America</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+        </select>
+      </div>
     </form>
   );
 };
