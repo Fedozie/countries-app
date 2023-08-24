@@ -7,16 +7,16 @@ const CardContainer = () => {
 
     return (
         <section>
-            {data && data.map((country, index) => {
+            {data && data.map((country, index) => (
                 <CountryCard
                     key = {index}
                     name = {country.name}
                     population = {country.population}
                     region = {country.region}
-                    capital={country.capital}
                     flag = {country.flags.png}
+                    capital={country.capital}
                 />
-            })}
+            ))}
         </section>
     );
 }
