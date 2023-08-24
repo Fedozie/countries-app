@@ -29,8 +29,8 @@ const SearchBar = () => {
       </div>
 
       <div>
-        <select name="" id="" className="dark:bg-dark-els dark:text-dark-text">
-            <option value="" disabled selected>Filter by Region</option>
+        <select name="" id="" defaultValue={'placeholder'} className="dark:bg-dark-els dark:text-dark-text">
+            <option value="placeholder" disabled>Filter by Region</option>
             <option value="Africa">Africa</option>
             <option value="America">America</option>
             <option value="Asia">Asia</option>
