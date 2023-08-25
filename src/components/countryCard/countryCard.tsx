@@ -12,9 +12,9 @@ interface DataProps {
 
 const CountryCard = ({name, flag, population, region, capital}: DataProps) => {
   return (
-    <div className='w-max h-auto bg-dark-text rounded-lg border-none pb-8'>
+    <div className='w-auto h-auto bg-dark-text rounded-lg border-none pb-8'>
         <div className="">
-            <img src={flag} alt="Country's flag" className="rounded-t-lg"/>
+            <img src={flag} alt="Country's flag" className="rounded-t-lg h-36 w-full object-cover"/>
         </div>
         <div className="p-4">
             <h4 className='font-bold text-xl text-light-text mt-8'>{name}</h4>

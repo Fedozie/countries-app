@@ -6,7 +6,7 @@ import data from '../../data.json';
 const CardContainer = () => {
 
     return (
-        <section>
+        <section className="grid grid-cols-4 gap-12">
             {data && data.map((country, index) => (
                 <CountryCard
                     key = {index}
