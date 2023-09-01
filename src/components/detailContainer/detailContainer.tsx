@@ -5,7 +5,7 @@ interface CountryProps {
 
 const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
   return (
-    <div className="w-full">
+    <div className="w-full mb-32">
         <div className="w-full mb-12">
             <button
                 className="w-36 p-3 bg-light-bg shadow-2xl rounded-lg flex justify-center items-center dark:bg-dark-els"
@@ -31,13 +31,13 @@ const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
         </div>
       <div className="w-full flex gap-32">
         <div className="w-1/2">
-          <img src={country.flags.svg} alt="Country's Flag" />
+          <img src={country.flags.svg} alt="Country's Flag" className=""/>
         </div>
         <div className="w-1/2 ">
           <h3 className="text-3xl font-semibold mb-4 text-light-text dark:text-dark-text">
             {country.name}
           </h3>
-          <div className="flex gap-14">
+          <div className="flex gap-12">
             <div>
               <p className="mb-2 dark:text-dark-text">
                 <span className="text-light-text font-semibold dark:text-dark-text">
@@ -67,7 +67,7 @@ const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
                 <span className="text-light-text font-semibold dark:text-dark-text">
                   Capital:{" "}
                 </span>
-                {country.capital}
+                {country.capital ? country.capital : "No Capital City"}
               </p>
             </div>
             <div>
@@ -107,7 +107,7 @@ const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
             {country.borders ? (
               country.borders.map((border: string, index: any) => (
                 <span
-                  className="w-12 rounded shadow m-2 p-1 flex justify-center items-center dark:text-dark-text"
+                  className="w-12 rounded shadow m-2 px-2.5 flex justify-center items-center dark:text-dark-text"
                   key={index}
                 >
                   {border}

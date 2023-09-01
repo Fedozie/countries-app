@@ -19,7 +19,7 @@ export default {
     extend: {
       fontFamily: {
         'primary': ['Nunito Sans']
-      }
+      },
     },
   },
   plugins: [
