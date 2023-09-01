@@ -15,7 +15,6 @@ const App = () => {
   const handleNavigate = () => {
     setDetail("")
   }
-  
 
   return (
     <div className="w-screen">

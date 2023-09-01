@@ -1,17 +1,15 @@
-import { MouseEventHandler } from "react";
 
-// import React from 'react';
 interface CountryProps{
     country: any;
-    handleNavigate?: MouseEventHandler
+    handleNavigate: () => void;
 }
 
 
-const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
+const DetailContainer = ({ country, handleNavigate}: CountryProps) => {
   return (
     <div className="w-full">
       <div className="w-full mb-12">
-        <button className="w-36 p-3 bg-light-bg shadow-2xl rounded-lg flex justify-center items-center" onClick = {handleNavigate()}> 
+        <button className="w-36 p-3 bg-light-bg shadow-2xl rounded-lg flex justify-center items-center" onClick = {handleNavigate}> 
           <svg
             className="w-6 h-6 text-gray-800 dark:text-white"
             aria-hidden="true"
@@ -21,9 +19,9 @@ const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M13 5H1m0 0 4 4M1 5l4-4"
             />
           </svg>
@@ -74,8 +72,8 @@ const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
               </p>
               <div className="flex gap-1 mb-2">
               <span className="font-semibold">Currency: </span>
-              {country.currencies.map((currency: any) => (
-                <p>
+              {country.currencies.map((currency: any, index: any) => (
+                <p key={index}>
                   {currency.name}
                 </p>
               ))}
@@ -83,8 +81,8 @@ const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
               
               <div className="flex gap-1">
                 <span className="mb-2 text-dark-bg font-semibold">Langauage:</span>
-                {country.languages.map((language: any) => (
-                    <p>
+                {country.languages.map((language: any, index: any) => (
+                    <p key = {index}>
                      {language.name},
                     </p>
               ))}
@@ -95,8 +93,8 @@ const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
           <div className="mt-20 flex justify-start items-center">
             <p className="font-semibold text-dark-bg">Border Countries: </p>
             {country.borders ?
-              country.borders.map((border: string) => (
-                <span className="w-12 rounded shadow m-2 p-1 flex justify-center items-center">{border}</span>
+              country.borders.map((border: string, index: any) => (
+                <span className="w-12 rounded shadow m-2 p-1 flex justify-center items-center" key ={index}>{border}</span>
               )) : <span className="ml-1">No Border Countries</span>}
           </div>
         </div>
