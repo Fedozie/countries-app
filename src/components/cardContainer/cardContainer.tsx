@@ -2,7 +2,7 @@ import CountryCard from "../countryCard/countryCard";
 import data from "../../data.json";
 
 
-const CardContainer = ({handleNavigate}:any) => {
+const CardContainer = ({handleDetail}:any) => {
 
   return (
     <section className="grid grid-cols-4 gap-12">
@@ -15,7 +15,7 @@ const CardContainer = ({handleNavigate}:any) => {
             region={country.region}
             flag={country.flags.png}
             capital={country.capital}
-            onClick = {()=>handleNavigate(country)}
+            onClick = {()=>handleDetail(country)}
           />
         ))}
     </section>

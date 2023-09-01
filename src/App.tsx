@@ -8,17 +8,22 @@ import DetailContainer from "./components/detailContainer/detailContainer";
 const App = () => {
   const [detail, setDetail] = useState<string>("");
 
-  const handleNavigate = (country: any) => {
+  const handleDetail = (country: any) => {
     setDetail(country);
   };
 
+  const handleNavigate = () => {
+    setDetail("")
+  }
+  
+
   return (
-    <div className="w-100vw">
+    <div className="w-screen">
       <Header />
       <section className="w-full bg-light-bg dark:bg-dark-bg px-20 py-10">
         <SearchBar />
         {!detail ? (
-          <CardContainer handleNavigate={handleNavigate} />
+          <CardContainer handleDetail={handleDetail} />
         ) : (
           <DetailContainer country={detail} handleNavigate={handleNavigate} />
         )}

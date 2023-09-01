@@ -1,10 +1,17 @@
-// import React from 'react';
+import { MouseEventHandler } from "react";
 
-const DetailContainer = ({ country }: any) => {
+// import React from 'react';
+interface CountryProps{
+    country: any;
+    handleNavigate?: MouseEventHandler
+}
+
+
+const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
   return (
     <div className="w-full">
       <div className="w-full mb-12">
-        <button className="w-36 p-3 bg-light-bg shadow-2xl rounded-lg flex justify-center items-center">
+        <button className="w-36 p-3 bg-light-bg shadow-2xl rounded-lg flex justify-center items-center" onClick = {handleNavigate()}> 
           <svg
             className="w-6 h-6 text-gray-800 dark:text-white"
             aria-hidden="true"
@@ -43,7 +50,7 @@ const DetailContainer = ({ country }: any) => {
                 <span className="text-light-text font-semibold">
                   Population:{" "}
                 </span>
-                {country.population}
+                {country.population.toLocaleString()}
               </p>
               <p className="mb-2 text-dark-bg">
                 <span className="text-light-text font-semibold">Region: </span>
@@ -87,10 +94,10 @@ const DetailContainer = ({ country }: any) => {
           </div>
           <div className="mt-20 flex justify-start items-center">
             <p className="font-semibold text-dark-bg">Border Countries: </p>
-            {country.borders &&
+            {country.borders ?
               country.borders.map((border: string) => (
                 <span className="w-12 rounded shadow m-2 p-1 flex justify-center items-center">{border}</span>
-              ))}
+              )) : <span className="ml-1">No Border Countries</span>}
           </div>
         </div>
       </div>
