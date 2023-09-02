@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <div className="w-screen h-full flex flex-col">
-      {detail ? <Header className = {}/> : <Header />}
+      <Header />
       <section className="w-full bg-light-bg flex-grow dark:bg-dark-bg px-20 py-10">
         <SearchBar />
         {!detail ? (

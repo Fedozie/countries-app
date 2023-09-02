@@ -1,9 +1,28 @@
+import { useEffect } from "react";
+
+
 interface CountryProps {
   country: any;
   handleNavigate: () => void;
 }
 
 const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
+  useEffect(() => {
+    const removeComma = () => {
+      const languages:NodeListOf<Element> = document.querySelectorAll('.languages');
+      const lastLanguage:any = languages[languages.length - 1];
+      const lastComma:any = lastLanguage.querySelector('span');
+  
+      if(lastComma){
+        lastLanguage.removeChild(lastComma)
+      }
+    }
+
+    removeComma();
+  }, [])
+
+  
+
   return (
     <div className="w-full mb-32">
         <div className="w-full mb-12">
@@ -93,8 +112,9 @@ const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
                   Langauage:
                 </span>
                 {country.languages.map((language: any, index: any) => (
-                  <p key={index} className="dark:text-dark-text">
-                    {language.name},
+                  <p key={index} className="languages dark:text-dark-text">
+                    {language.name}
+                    <span className="">,</span>
                   </p>
                 ))}
               </div>
@@ -107,7 +127,7 @@ const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
             {country.borders ? (
               country.borders.map((border: string, index: any) => (
                 <span
-                  className="w-12 rounded shadow m-2 px-2.5 flex justify-center items-center dark:text-dark-text"
+                  className="w-12 rounded shadow m-2 py-0.5 px-6 flex justify-center items-center text-sm dark:text-dark-text"
                   key={index}
                 >
                   {border}
