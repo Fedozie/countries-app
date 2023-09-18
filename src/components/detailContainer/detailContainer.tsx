@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 
-
 interface CountryProps {
   country: any;
   handleNavigate: () => void;
@@ -9,48 +8,48 @@ interface CountryProps {
 const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
   useEffect(() => {
     const removeComma = () => {
-      const languages:NodeListOf<Element> = document.querySelectorAll('.languages');
-      const lastLanguage:any = languages[languages.length - 1];
-      const lastComma:any = lastLanguage.querySelector('span');
-  
-      if(lastComma){
-        lastLanguage.removeChild(lastComma)
+      const languages: NodeListOf<HTMLDivElement> =
+        document.querySelectorAll(".languages");
+      const lastLanguage: HTMLDivElement = languages[languages.length - 1];
+      const lastComma: HTMLSpanElement | null =
+        lastLanguage.querySelector("span");
+
+      if (lastComma) {
+        lastLanguage.removeChild(lastComma);
       }
-    }
+    };
 
     removeComma();
-  }, [])
-
-  
+  }, []);
 
   return (
-    <div className="w-full mb-32">
-        <div className="w-full mb-12">
-            <button
-                className="w-36 p-3 bg-light-bg shadow-2xl rounded-lg flex justify-center items-center dark:bg-dark-els"
-                onClick={handleNavigate}
-            >
-                <svg
-                className="w-6 h-6 text-gray-800 dark:text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
-                >
-                <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M13 5H1m0 0 4 4M1 5l4-4"
-                />
-                </svg>
-                <p className="ml-2 dark:text-dark-text">Back</p>
-            </button>
-        </div>
+    <section className="w-full mb-32">
+      <div className="w-full mb-12">
+        <button
+          className="w-36 p-3 bg-light-bg shadow-2xl rounded-lg flex justify-center items-center dark:bg-dark-els"
+          onClick={handleNavigate}
+        >
+          <svg
+            className="w-6 h-6 text-gray-800 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M13 5H1m0 0 4 4M1 5l4-4"
+            />
+          </svg>
+          <p className="ml-2 dark:text-dark-text">Back</p>
+        </button>
+      </div>
       <div className="w-full flex gap-32">
         <div className="w-1/2">
-          <img src={country.flags.svg} alt="Country's Flag" className=""/>
+          <img src={country.flags.svg} alt="Country's Flag" className="" />
         </div>
         <div className="w-1/2 ">
           <h3 className="text-3xl font-semibold mb-4 text-light-text dark:text-dark-text">
@@ -141,7 +140,7 @@ const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

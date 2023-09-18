@@ -16,20 +16,24 @@ const App = () => {
     setDetail("")
   }
 
+  const handleSearch = () => {
+    console.log("Search Bar Clicked")
+  }
+
   return (
-    <div className="w-screen h-full flex flex-col">
+    <section className = {`w-screen flex flex-col ${detail ? "h-screen" : "h-full"}`}>
       <Header />
-      <section className="w-full bg-light-bg flex-grow dark:bg-dark-bg px-20 py-10">
+      <section className="w-full h-full bg-light-bg flex-grow dark:bg-dark-bg px-20 py-10">
         {!detail ? (
           <div>
-            <SearchBar />
+            <SearchBar handleSearch = {handleSearch} />
             <CardContainer handleDetail={handleDetail} />
           </div>
         ) : (
           <DetailContainer country={detail} handleNavigate={handleNavigate} />
         )}
       </section>
-    </div>
+    </section>
   );
 };
 

@@ -1,7 +1,11 @@
-const SearchBar = () => {
+interface SearchProps {
+  handleSearch : () => void
+}
+
+const SearchBar = ({handleSearch}: SearchProps) => {
   return (
     <form className="flex justify-between mb-10">
-      <div className="flex items-center bg-dark-text w-3/12 dark:bg-dark-els ">
+      <div className="flex items-center bg-dark-text w-3/12 rounded-lg p-1 shadow-md  dark:bg-dark-els ">
         <button className="mx-4 peer">
           <svg
             className="w-6 h-6 text-gray-800 dark:text-white"
@@ -20,16 +24,17 @@ const SearchBar = () => {
           </svg>
         </button>
         <input
+          onChange = {handleSearch}
           type="text"
           placeholder="Search for a country..."
           name=""
           id=""
-          className="placeholder:text-light-input  cursor-pointer border-0 focus:border-0 focus:outline-0 w-full dark:bg-dark-els dark:placeholder:text-dark-text"
+          className="placeholder:text-light-input cursor-pointer border-0 w-full dark:bg-dark-els dark:text-dark-text dark:placeholder:text-dark-text"
         />
       </div>
 
       <div>
-        <select name="" id="" defaultValue={'placeholder'} className="dark:bg-dark-els dark:text-dark-text">
+        <select name="" id="" defaultValue={'placeholder'} className=" dark:bg-dark-els dark:text-dark-text">
             <option value="placeholder" disabled>Filter by Region</option>
             <option value="Africa">Africa</option>
             <option value="America">America</option>
