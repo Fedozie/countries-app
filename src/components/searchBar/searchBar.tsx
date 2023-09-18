@@ -24,7 +24,7 @@ const SearchBar = () => {
           placeholder="Search for a country..."
           name=""
           id=""
-          className="cursor-pointer border-0 focus:border-0 focus:outline-0 w-full dark:bg-dark-els placeholder:text-light-text dark:placeholder:text-dark-text"
+          className="placeholder:text-light-input  cursor-pointer border-0 focus:border-0 focus:outline-0 w-full dark:bg-dark-els dark:placeholder:text-dark-text"
         />
       </div>
 

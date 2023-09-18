@@ -20,9 +20,11 @@ const App = () => {
     <div className="w-screen h-full flex flex-col">
       <Header />
       <section className="w-full bg-light-bg flex-grow dark:bg-dark-bg px-20 py-10">
-        <SearchBar />
         {!detail ? (
-          <CardContainer handleDetail={handleDetail} />
+          <div>
+            <SearchBar />
+            <CardContainer handleDetail={handleDetail} />
+          </div>
         ) : (
           <DetailContainer country={detail} handleNavigate={handleNavigate} />
         )}
