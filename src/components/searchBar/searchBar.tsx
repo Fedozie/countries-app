@@ -1,11 +1,23 @@
+import { ChangeEvent } from "react";
+
+
 interface SearchProps {
-  handleSearch : () => void
+  handleSearch : (query:string) => void;
 }
 
-const SearchBar = ({handleSearch}: SearchProps) => {
+const SearchBar = ({handleSearch,}: SearchProps) => {
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const query = e.target.value;
+    handleSearch(query);
+  }
+  
+
+
+
   return (
     <form className="flex justify-between mb-10">
-      <div className="flex items-center bg-dark-text w-3/12 rounded-lg p-1 shadow-md  dark:bg-dark-els ">
+      <div className="flex items-center bg-dark-text w-3/12 rounded-lg p-1 dark:bg-dark-els ">
         <button className="mx-4 peer">
           <svg
             className="w-6 h-6 text-gray-800 dark:text-white"
@@ -24,7 +36,7 @@ const SearchBar = ({handleSearch}: SearchProps) => {
           </svg>
         </button>
         <input
-          onChange = {handleSearch}
+          onChange = {handleChange}
           type="text"
           placeholder="Search for a country..."
           name=""

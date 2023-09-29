@@ -1,8 +1,14 @@
 import CountryCard from "../countryCard/countryCard";
-import data from "../../data.json";
+import type {CountryType} from "../../utils";
 
 
-const CardContainer = ({handleDetail}:any) => {
+interface CardsProps {
+  handleDetail: (country: any) => void;
+  data: CountryType[];
+}
+
+
+const CardContainer = ({handleDetail, data}: CardsProps) => {
 
   return (
     <section className="grid grid-cols-4 gap-12">
