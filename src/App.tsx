@@ -26,7 +26,7 @@ const App = () => {
   const handleSearch = (query: string) => {
     const lowerCaseQuery = query.toLowerCase();
     const filteredResults = filteredData.filter((country) => {
-      country.name.toLowerCase().includes(lowerCaseQuery)
+      return country.name.toLowerCase().includes(lowerCaseQuery)
     })
     setFilteredData(filteredResults)
   };
@@ -36,7 +36,7 @@ const App = () => {
       className={`w-screen flex flex-col ${detail ? "h-screen" : "h-full"}`}
     >
       <Header />
-      <section className="w-full min-h-[90vh] bg-light-bg flex-1 dark:bg-dark-bg px-20 py-10">
+      <section className="w-full min-h-[90vh] bg-light-bg flex-1 dark:bg-dark-bg px-20 py-10 mbl:px-14 tab:px-10">
         {!detail ? (
           <div>
             <SearchBar handleSearch={handleSearch}  />

@@ -19,7 +19,7 @@ const ToggleSwitch = () => {
     <button className="flex" onClick={handleSwitch}>
       {theme === "dark" ? (
         <svg
-          className="w-6 h-6 mr-4 text-gray-800 dark:text-white"
+          className="w-6 h-6 mr-4 text-gray-800 dark:text-white mbl:mr-2"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -35,7 +35,7 @@ const ToggleSwitch = () => {
         </svg>
       ) : (
         <svg
-          className="w-6 h-6 mr-4 text-gray-800 dark:text-white"
+          className="w-6 h-6 mr-4 text-gray-800 dark:text-white mbl:mr-2"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

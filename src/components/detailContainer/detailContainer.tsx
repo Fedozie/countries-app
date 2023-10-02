@@ -47,15 +47,15 @@ const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
           <p className="ml-2 dark:text-dark-text">Back</p>
         </button>
       </div>
-      <div className="w-full flex gap-32">
-        <div className="w-1/2">
+      <div className="w-full flex gap-32 mbl:flex-col mbl:gap-10">
+        <div className="w-1/2 mbl:w-full">
           <img src={country.flags.svg} alt="Country's Flag" className="" />
         </div>
-        <div className="w-1/2 ">
+        <div className="w-1/2 mbl:w-full">
           <h3 className="text-3xl font-semibold mb-4 text-light-text dark:text-dark-text">
             {country.name}
           </h3>
-          <div className="flex gap-12">
+          <div className="flex gap-12 mbl:flex-col">
             <div>
               <p className="mb-2 dark:text-dark-text">
                 <span className="text-light-text font-semibold dark:text-dark-text">
@@ -119,10 +119,11 @@ const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
               </div>
             </div>
           </div>
-          <div className="mt-20 flex justify-start items-center">
-            <p className="font-semibold text-dark-els dark:text-dark-text">
+          <div className="mt-20 flex justify-start items-center mbl:mt-10 mbl:flex-col">
+            <p className="font-semibold text-dark-els dark:text-dark-text mbl:self-start mbl:mb-4">
               Border Countries:{" "}
             </p>
+            <div className="mbl:flex mbl:self-start">
             {country.borders ? (
               country.borders.map((border: string, index: any) => (
                 <span
@@ -137,6 +138,7 @@ const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
                 No Border Countries
               </span>
             )}
+            </div>
           </div>
         </div>
       </div>
