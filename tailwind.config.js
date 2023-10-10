@@ -20,8 +20,12 @@ export default {
       'dsk': {'min': '1025px','max': '1200px'},
       // => @media (max-width: 1200px){ ... } For Desktops and Large Screens
 
-      'tv': {'min': '1201px'}
+      'tv': {'min': '1201px'},
       // => @media (min-width: 1201px){ ... } For TV and Extra Large Screens
+
+      'md': {'max': '768px'},
+      // => @media (max-width: 768px) { ... }
+
     },
     extend: {
       fontFamily: {
