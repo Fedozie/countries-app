@@ -1,11 +1,13 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface CountryProps {
   country: any;
-  handleNavigate: () => void;
 }
 
-const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
+const DetailContainer = ({ country, }: CountryProps) => {
+  const navigate = useNavigate()
+
   useEffect(() => {
     //Functionality to remove commas if the languages are less than 2
     const removeComma = () => {
@@ -28,7 +30,7 @@ const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
       <div className="w-full mb-12">
         <button
           className="w-36 p-3 bg-light-bg shadow-2xl rounded-lg flex justify-center items-center dark:bg-dark-els"
-          onClick={handleNavigate}
+          onClick={() => navigate(-1) }
         >
           <svg
             className="w-6 h-6 text-gray-800 dark:text-white"
