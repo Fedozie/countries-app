@@ -36,7 +36,7 @@ const App = () => {
       className={`w-screen flex flex-col ${detail ? "h-screen" : "h-full"}`}
     >
       <Header />
-      <section className="w-full min-h-fit bg-light-bg flex-1 dark:bg-dark-bg px-20 py-10 mbl:px-8">
+      <section className="w-full min-h-max bg-light-bg flex-1 dark:bg-dark-bg px-20 py-10 mbl:px-8">
         {!detail ? (
           <div>
             <SearchBar handleSearch={handleSearch}  />

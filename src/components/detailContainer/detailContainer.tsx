@@ -7,6 +7,7 @@ interface CountryProps {
 
 const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
   useEffect(() => {
+    //Functionality to remove commas if the languages are less than 2
     const removeComma = () => {
       const languages: NodeListOf<HTMLDivElement> =
         document.querySelectorAll(".languages");
@@ -23,7 +24,7 @@ const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
   }, []);
 
   return (
-    <section className="w-full mb-32">
+    <section className="w-full">
       <div className="w-full mb-12">
         <button
           className="w-36 p-3 bg-light-bg shadow-2xl rounded-lg flex justify-center items-center dark:bg-dark-els"
@@ -49,7 +50,11 @@ const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
       </div>
       <div className="w-full flex gap-20 md:flex-col md:gap-10 lap:gap-4">
         <div className="w-1/2 md:w-full">
-          <img src={country.flags.svg} alt={`${country.name}'s`} className="max-w-full" />
+          <img
+            src={country.flags.svg}
+            alt={`${country.name}'s`}
+            className="max-w-full"
+          />
         </div>
         <div className="w-1/2 md:w-full">
           <h3 className="text-3xl font-semibold mb-4 text-light-text dark:text-dark-text">
@@ -106,7 +111,7 @@ const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
                 ))}
               </div>
 
-              <div className="flex gap-1">
+              <div className="flex flex-wrap gap-1">
                 <span className="mb-2 text-dark-els font-semibold dark:text-dark-text">
                   Langauage:
                 </span>
@@ -119,25 +124,25 @@ const DetailContainer = ({ country, handleNavigate }: CountryProps) => {
               </div>
             </div>
           </div>
-          <div className="mt-20 flex justify-start items-center mbl:mt-10 mbl:flex-col">
+          <div className="mt-20 flex flex-wrap justify-start items-center mbl:mt-10 mbl:flex-col">
             <p className="font-semibold text-dark-els dark:text-dark-text mbl:self-start mbl:mb-4">
               Border Countries:{" "}
             </p>
             <div className="flex flex-wrap mbl:flex mbl:self-start">
-            {country.borders ? (
-              country.borders.map((border: string, index: any) => (
-                <span
-                  className="w-12 rounded shadow m-2 py-0.5 px-6 flex justify-center items-center text-sm dark:text-dark-text"
-                  key={index}
-                >
-                  {border}
+              {country.borders ? (
+                country.borders.map((border: string, index: any) => (
+                  <span
+                    className="w-12 rounded shadow-md m-2 py-0.5 px-6 flex flex-wrap justify-center items-center text-sm dark:text-dark-text"
+                    key={index}
+                  >
+                    {border}
+                  </span>
+                ))
+              ) : (
+                <span className="ml-1 dark:text-dark-text">
+                  No Border Countries
                 </span>
-              ))
-            ) : (
-              <span className="ml-1 dark:text-dark-text">
-                No Border Countries
-              </span>
-            )}
+              )}
             </div>
           </div>
         </div>
