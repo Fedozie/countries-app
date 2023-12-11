@@ -5,14 +5,11 @@ interface CountryProps {
   country: any;
 }
 
-const DetailContainer = ({ country, }: CountryProps) => {
+const DetailContainer = ({ country }: CountryProps) => {
   const navigate = useNavigate();
   const { slug } = useParams();
-  
-  useEffect(() => {
 
-  }, [slug]);
-
+  useEffect(() => {}, [slug]);
 
   useEffect(() => {
     //Functionality to remove commas if the languages are less than 2
@@ -32,11 +29,11 @@ const DetailContainer = ({ country, }: CountryProps) => {
   }, []);
 
   return (
-    <section className="w-full">
+    <section className="w-full h-auto px-20 py-10 dark:bg-dark-bg md:h-screen">
       <div className="w-full mb-12">
         <button
           className="w-36 p-3 bg-light-bg shadow-2xl rounded-lg flex justify-center items-center dark:bg-dark-els"
-          onClick={() => navigate(-1) }
+          onClick={() => navigate("/")}
         >
           <svg
             className="w-6 h-6 text-gray-800 dark:text-white"
@@ -147,7 +144,7 @@ const DetailContainer = ({ country, }: CountryProps) => {
                   </span>
                 ))
               ) : (
-                <span className="ml-1 dark:text-dark-text">
+                <span className="ml-1 dark:text-dark-text mbl:ml-0">
                   No Border Countries
                 </span>
               )}

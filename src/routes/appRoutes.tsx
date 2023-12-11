@@ -1,15 +1,16 @@
 import { useState } from "react";
 
 import { Routes, Route, useNavigate } from "react-router-dom";
+import Header from "../components/header/header";
 import HomePage from "../pages/homePage";
 import DetailContainer from "../components/detailContainer/detailContainer";
 import NoMatchPage from "../pages/noMatchPage";
 
-import data from "../data.json";
+import data from "../data/data.json";
 import { CountryType } from "../utils";
 
 const AppRoutes = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
   const [countriesData, setCountriesData] = useState<CountryType[]>(data);
   const [detail, setDetail] = useState<string>("");
 
@@ -23,14 +24,24 @@ const AppRoutes = () => {
   };
 
   const handleDetail = (country: any) => {
-    navigate(`/${country.alpha3Code.toLowerCase()}`)
-    setDetail(country)
+    navigate(`/${country.alpha3Code.toLowerCase()}`);
+    setDetail(country);
   };
 
   return (
     <>
+      <Header />
       <Routes>
-        <Route path="/" element={<HomePage data={countriesData} handleSearch={handleSearch} handleDetail={handleDetail}/>}/>
+        <Route
+          path="/"
+          element={
+            <HomePage
+              data={countriesData}
+              handleSearch={handleSearch}
+              handleDetail={handleDetail}
+            />
+          }
+        />
         <Route path="/:slug" element={<DetailContainer country={detail} />} />
 
         <Route path="*" element={<NoMatchPage />} />

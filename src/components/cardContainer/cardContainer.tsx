@@ -1,15 +1,12 @@
 import CountryCard from "../countryCard/countryCard";
-import type {CountryType} from "../../utils";
-
+import type { CountryType } from "../../utils";
 
 interface CardsProps {
   handleDetail: (country: any) => void;
   data: CountryType[];
 }
 
-
-const CardContainer = ({handleDetail, data}: CardsProps) => {
-
+const CardContainer = ({ handleDetail, data }: CardsProps) => {
   return (
     <section className="grid grid-cols-4 gap-12 mbl:grid-cols-1 tab:grid-cols-2 lap:grid-cols-3">
       {data &&
@@ -21,7 +18,7 @@ const CardContainer = ({handleDetail, data}: CardsProps) => {
             region={country.region}
             flag={country.flags.png}
             capital={country.capital}
-            onClick = {()=>handleDetail(country)}
+            onClick={() => handleDetail(country)}
           />
         ))}
     </section>
