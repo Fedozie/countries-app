@@ -1,37 +1,9 @@
-import { useState} from "react";
-import Header from "./components/header/header";
-import SearchBar from "./components/searchBar/searchBar";
-import CardContainer from "./components/cardContainer/cardContainer";
-import DetailContainer from "./components/detailContainer/detailContainer";
-import data from "./data.json";
-
 import "./App.css";
-import { CountryType } from "./utils";
-
 import AppRoutes from "./routes/appRoutes";
 
 const App = () => {
-  const [filteredData, setFilteredData] = useState<CountryType[]>(data);
-  const [detail, setDetail] = useState<string>("");
-
-  const handleDetail = (country: any) => {
-    setDetail(country);
-  };
-
-  const handleNavigate = () => {
-    setDetail("");
-  };
-
   
-
-  //Function for handling the search functionality
-  const handleSearch = (query: string) => {
-    const lowerCaseQuery = query.toLowerCase();
-    const filteredResults = filteredData.filter((country) => {
-      return country.name.toLowerCase().includes(lowerCaseQuery)
-    })
-    setFilteredData(filteredResults)
-  };
+  
 
   return (
     // <section

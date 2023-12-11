@@ -1,12 +1,18 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 interface CountryProps {
   country: any;
 }
 
 const DetailContainer = ({ country, }: CountryProps) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const { slug } = useParams();
+  
+  useEffect(() => {
+
+  }, [slug]);
+
 
   useEffect(() => {
     //Functionality to remove commas if the languages are less than 2
