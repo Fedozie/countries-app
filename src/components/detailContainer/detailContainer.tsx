@@ -29,7 +29,7 @@ const DetailContainer = ({ country }: CountryProps) => {
   }, []);
 
   return (
-    <section className="w-full h-auto px-20 py-10 dark:bg-dark-bg md:h-screen">
+    <section className="w-full h-auto px-20 py-10 dark:bg-dark-bg [@media(min-width:768px)]:h-screen">
       <div className="w-full mb-12">
         <button
           className="w-36 p-3 bg-light-bg shadow-2xl rounded-lg flex justify-center items-center dark:bg-dark-els"
@@ -53,15 +53,15 @@ const DetailContainer = ({ country }: CountryProps) => {
           <p className="ml-2 dark:text-dark-text">Back</p>
         </button>
       </div>
-      <div className="w-full flex gap-20 md:flex-col md:gap-10 lap:gap-4">
-        <div className="w-1/2 md:w-full">
+      <div className="w-full flex gap-20 [@media(max-width:768px)]:flex-col mmd:gap-10 lap:gap-4">
+        <div className="w-1/2 h-auto mmd:w-auto">
           <img
             src={country.flags.svg}
             alt={`${country.name}'s`}
-            className="max-w-full"
+            className="w-full max-h-[20.5rem]"
           />
         </div>
-        <div className="w-1/2 md:w-full">
+        <div className="w-1/2 mmd:w-auto">
           <h3 className="text-3xl font-semibold mb-4 text-light-text dark:text-dark-text">
             {country.name}
           </h3>

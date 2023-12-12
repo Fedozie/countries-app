@@ -23,8 +23,11 @@ export default {
       'tv': {'min': '1201px'},
       // => @media (min-width: 1201px){ ... } For TV and Extra Large Screens
 
-      'md': {'max': '768px'},
-      // => @media (max-width: 768px) { ... }
+      'msm': {'max': '640px'},
+      // => @media (max-width: 640px){ ... }
+
+      'mmd': {'max': '768px'},
+      // => @media (max-width: 768px){ ... }
 
     },
     extend: {
