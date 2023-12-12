@@ -29,7 +29,7 @@ const DetailContainer = ({ country }: CountryProps) => {
   }, []);
 
   return (
-    <section className="w-full h-auto px-20 py-10 dark:bg-dark-bg [@media(min-width:768px)]:h-screen">
+    <section className="w-full h-auto px-20 py-10 dark:bg-dark-bg [@media(min-width:768px)]:h-screen [@media(max-width:425px)]:px-10">
       <div className="w-full mb-12">
         <button
           className="w-36 p-3 bg-light-bg shadow-2xl rounded-lg flex justify-center items-center dark:bg-dark-els"
