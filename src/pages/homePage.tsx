@@ -5,12 +5,12 @@ import { CountryType } from "../utils";
 interface HomeProps {
   data: CountryType[];
   handleSearch: (query: string) => void;
-  handleDetail: (country: any) => void;
+  handleDetail: (country: CountryType) => void;
 }
 
 const HomePage = ({ handleSearch, handleDetail, data }: HomeProps) => {
   return (
-    <section className="w-screen h-auto bg-light-bg dark:bg-dark-bg">
+    <section className="w-screen min-h-max bg-light-bg dark:bg-dark-bg">
       <SearchBar handleSearch={handleSearch} />
       <section className="w-full min-h-max bg-light-bg flex-1 dark:bg-dark-bg px-20 py-10 mbl:px-10">
         <CardContainer handleDetail={handleDetail} data={data} />

@@ -4,4 +4,5 @@ export type CountryType = {
     region: string;
     capital?: string;
     flags: any;
+    alpha3Code: string
 }
