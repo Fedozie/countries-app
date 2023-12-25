@@ -7,7 +7,6 @@
 html{
     box-sizing: border-box;
     font-size: 100%;
-    height: 100%;
 }
 
 *, *::before, *::after{
@@ -15,5 +14,17 @@ html{
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    /* transition: all .1s ease-in-out; */
+    transition: all .1s ease-in-out;
+}
+
+body, html{
+    height: 100%;
+}
+
+body{
+    background-color: theme(colors.light-bg);
+}
+
+body.dark{
+    background-color: theme(colors.dark-bg);
 }
