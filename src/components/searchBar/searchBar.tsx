@@ -1,15 +1,13 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent} from "react";
 
 interface SearchProps {
   handleSearch: (query: string) => void;
 }
 
 const SearchBar = ({ handleSearch }: SearchProps) => {
-  const [keyword, setKeyword] = useState("");
-
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setKeyword(e.target.value);
-    handleSearch(keyword);
+    const inputValue = e.target.value;
+    handleSearch(inputValue);
   };
 
   return (
@@ -33,7 +31,6 @@ const SearchBar = ({ handleSearch }: SearchProps) => {
           </svg>
         </button>
         <input
-          value={keyword}
           onChange={handleChange}
           type="text"
           placeholder="Search for a country..."

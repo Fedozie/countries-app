@@ -25,6 +25,6 @@ body{
     background-color: theme(colors.light-bg);
 }
 
-body.dark{
+html.dark body{
     background-color: theme(colors.dark-bg);
 }

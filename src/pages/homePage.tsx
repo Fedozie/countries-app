@@ -12,7 +12,7 @@ const HomePage = ({ handleSearch, handleDetail, data }: HomeProps) => {
   return (
     <section className="w-screen min-h-max bg-light-bg dark:bg-dark-bg">
       <SearchBar handleSearch={handleSearch} />
-      <section className="w-full min-h-max bg-light-bg flex-1 dark:bg-dark-bg px-20 py-10 mbl:px-10">
+      <section className="w-full h-auto bg-light-bg flex-1 dark:bg-dark-bg px-20 py-10 mbl:px-10">
         <CardContainer handleDetail={handleDetail} data={data} />
       </section>
     </section>
