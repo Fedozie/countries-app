@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent} from "react";
 
 interface SearchProps {
   handleSearch: (query: string) => void;
@@ -6,13 +6,13 @@ interface SearchProps {
 
 const SearchBar = ({ handleSearch }: SearchProps) => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const query = e.target.value;
-    handleSearch(query);
+    const inputValue = e.target.value;
+    handleSearch(inputValue);
   };
 
   return (
-    <form className="sticky top-[10vh] bg-light-bg dark:bg-dark-bg py-10 px-20 flex justify-between items-center mbl:flex-col">
-      <div className="flex justify-between items-center bg-dark-text w-3/12 rounded-lg p-1 dark:bg-dark-els mbl:w-full tab:w-6/12">
+    <form className="sticky top-[10vh] bg-light-bg dark:bg-dark-bg py-10 px-20 flex justify-between mbl:flex-col mbl:px-5">
+      <div className="flex justify-between items-center bg-dark-text w-3/12 rounded-lg p-1 dark:bg-dark-els mbl:w-full mbl:mb-10 tab:w-6/12">
         <button className="mx-4 peer mbl:mx-2 tab:mx-2">
           <svg
             className="w-6 h-6 text-gray-800 dark:text-white"

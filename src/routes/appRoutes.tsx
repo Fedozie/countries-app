@@ -11,19 +11,22 @@ import { CountryType } from "../utils";
 
 const AppRoutes = () => {
   const navigate = useNavigate();
-  const [countriesData, setCountriesData] = useState<CountryType[]>(data);
-  const [detail, setDetail] = useState<string>("");
+  const [countriesData] = useState<CountryType[]>(data);
+  const [filteredCountriesData, setFilteredCountriesData] = useState<CountryType[]>(countriesData)
+  const [detail, setDetail] = useState<CountryType>();
 
-  //Function for handling the search functionality
+  // Function for handling the search functionality
   const handleSearch = (query: string) => {
-    const lowerCaseQuery = query.toLowerCase();
-    const filteredResults = countriesData.filter((country) => {
+    const lowerCaseQuery = query.toLowerCase().trim();
+
+    const newCountriesArr = countriesData.filter((country) => {
       return country.name.toLowerCase().includes(lowerCaseQuery);
-    });
-    setCountriesData(filteredResults);
+    }); 
+
+    setFilteredCountriesData(newCountriesArr);
   };
 
-  const handleDetail = (country: any) => {
+  const handleDetail = (country: CountryType) => {
     navigate(`/${country.alpha3Code.toLowerCase()}`);
     setDetail(country);
   };
@@ -36,7 +39,7 @@ const AppRoutes = () => {
           path="/"
           element={
             <HomePage
-              data={countriesData}
+              data={filteredCountriesData}
               handleSearch={handleSearch}
               handleDetail={handleDetail}
             />
